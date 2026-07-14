@@ -53,6 +53,7 @@ colors:
 
 ascii:
   width: 60
+  bottom_crop: 0.9
   charset: " .'`^\",:;Il!i><~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$"
   contrast: 1.4
   gamma: 0.85
@@ -62,7 +63,7 @@ ascii:
 svg:
   hero_width: 1200
   hero_height: 400
-  portrait_ratio: 0.4
+  portrait_ratio: 0.28
   font_family: "JetBrains Mono, Consolas, monospace"
   font_size: 8
   loop_duration: 52

@@ -24,26 +24,21 @@ def load_config(path: Path) -> dict:
 def load_and_preprocess(path: Path, cfg: dict) -> Image.Image:
     ascii_cfg = cfg["ascii"]
     width = int(ascii_cfg["width"])
-    height = int(width * 1.25)
 
     image = Image.open(path).convert("L")
     image = ImageOps.autocontrast(image)
 
-    # Center crop to portrait aspect ratio (chars are taller than wide).
+    # Keep the full original composition. The grid compensates for the
+    # terminal font's taller character cells instead of cropping the headshot.
     src_w, src_h = image.size
-    target_ratio = width / height
+    crop_bottom = float(ascii_cfg.get("bottom_crop", 1.0))
+    crop_height = max(1, min(src_h, round(src_h * crop_bottom)))
+    image = image.crop((0, 0, src_w, crop_height))
+    src_h = crop_height
     src_ratio = src_w / src_h
-
-    if src_ratio > target_ratio:
-        new_w = int(src_h * target_ratio)
-        left = (src_w - new_w) // 2
-        box = (left, 0, left + new_w, src_h)
-    else:
-        new_h = int(src_w / target_ratio)
-        top = max(0, int(src_h * 0.08))
-        box = (0, top, src_w, min(src_h, top + new_h))
-
-    image = image.crop(box).resize((width, height), Image.Resampling.LANCZOS)
+    cell_ratio = float(ascii_cfg["char_width"]) / float(ascii_cfg["char_height"])
+    height = max(1, round(width * cell_ratio / src_ratio))
+    image = image.resize((width, height), Image.Resampling.LANCZOS)
 
     contrast = float(ascii_cfg.get("contrast", 1.0))
     gamma = float(ascii_cfg.get("gamma", 1.0))

@@ -38,15 +38,15 @@ class Theme:
 
 @dataclass
 class Timeline:
-    reveal: float = 3.0
-    blink: float = 0.8
-    flicker: float = 2.0
-    dropout: float = 2.0
-    dissolve: float = 2.0
-    code_words: float = 3.0
-    ai_words: float = 3.0
-    reconstruct: float = 4.0
-    hold: float = 2.0
+    reveal: float = 8.0
+    blink: float = 1.2
+    flicker: float = 3.0
+    dropout: float = 3.0
+    dissolve: float = 3.0
+    code_words: float = 4.0
+    ai_words: float = 4.0
+    reconstruct: float = 6.0
+    hold: float = 5.0
 
     @property
     def total(self) -> float:
@@ -268,6 +268,11 @@ def build_portrait_panel(
 
     grid_height = len(grid) * char_h
     grid_width = len(grid[0]) * char_w if grid else 0
+    scale = min(panel_width / grid_width, panel_height / grid_height) if grid_width and grid_height else 1
+    char_w *= scale
+    char_h *= scale
+    grid_height = len(grid) * char_h
+    grid_width = len(grid[0]) * char_w if grid else 0
     start_x = (panel_width - grid_width) / 2
     start_y = (panel_height - grid_height) / 2 + 8
 
@@ -286,7 +291,7 @@ def build_portrait_panel(
 
     for row_idx, row in enumerate(grid):
         row_group = sub(portrait_group, "g", id=f"row-{row_idx}", opacity="0")
-        row_begin = offsets["reveal_start"] + row_idx * 0.04
+        row_begin = offsets["reveal_start"] + row_idx * (timeline.reveal / max(1, len(grid) - 1))
         sub(
             row_group,
             "animate",
@@ -658,7 +663,7 @@ def build_document(
     sub(root, "rect", width=str(width), height=str(height), fill=theme.bg)
     build_crt_defs(root, theme, width, height)
 
-    if mode == "ascii":
+    if mode in {"hero", "ascii"}:
         build_portrait_panel(
             root,
             grid,
@@ -672,7 +677,15 @@ def build_document(
         )
 
     if mode == "hero":
-        build_dossier_hero(root, cfg, theme, width, height)
+        build_terminal_panel(
+            root,
+            cfg,
+            theme,
+            x_offset=portrait_width + margin,
+            y_offset=margin,
+            panel_width=terminal_width - margin,
+            panel_height=height - margin * 2,
+        )
 
     build_crt_overlay(root, width, height, theme)
     return ET.ElementTree(root)
