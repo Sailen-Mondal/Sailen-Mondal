@@ -4,25 +4,17 @@ identity:
   hostname: "sailen"
   role: "Java Backend Developer"
   education: "B.Tech CSE\nJIS University"
-  tagline: "Java Backend Developer | Spring Boot | AI Agents"
+  tagline: "Java Backend Developer | Spring Boot | AI Workflows"
 
 terminal_commands:
   - cmd: whoami
     output: "Sailen Mondal"
   - cmd: role
     output: "Java Backend Developer"
-  - cmd: education
-    output: "B.Tech CSE\nJIS University"
   - cmd: current_focus
-    output: "Java\nSpring Boot\nSystem Design\nAI Agents"
-  - cmd: currently_building
-    output: "Career Copilot"
-  - cmd: latest_project
-    output: "WhatsApp AI Assistant"
-  - cmd: open_to
-    output: "Backend Developer\nSoftware Engineer"
-  - cmd: tech_stack
-    output: "Java\nSpring Boot\nHibernate\nJPA\nPostgreSQL\nMongoDB\nRedis\nReact\nDocker\nGitHub Actions\nLinux\nLangChain\nOpenRouter\nGemini"
+    output: "Spring Boot APIs | AI workflows"
+  - cmd: availability
+    output: "Open to backend opportunities"
 
 animation_words:
   binary: "0101010010"

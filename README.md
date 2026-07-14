@@ -1,76 +1,40 @@
-# Sailen Mondal
-
-```text
-$ whoami
-Sailen Mondal
-$ role
-Java Backend Developer
-$ status
-Building production systems on the terminal.
-```
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg">
-  <img alt="Sailen Mondal - terminal profile" src="assets/hero-dark.svg">
-</picture>
-
-## GitHub Stats
-
-```bash
-$ gh api user --jq .login
-Sailen-Mondal
-```
-
 <p align="center">
-  <img alt="GitHub Stats" src="https://github-readme-stats.vercel.app/api?username=Sailen-Mondal&show_icons=true&hide_border=false&bg_color=050505&title_color=8AF76E&text_color=6CCF5F&icon_color=8AF76E&border_color=4E6E4A" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg">
+    <img alt="Terminal dossier for Sailen Mondal" src="assets/hero-dark.svg">
+  </picture>
 </p>
 
 <p align="center">
-  <img alt="GitHub Streak" src="https://github-readme-streak-stats.herokuapp.com?user=Sailen-Mondal&background=050505&border=4E6E4A&stroke=4E6E4A&ring=6CCF5F&fire=8AF76E&currStreakLabel=8AF76E&sideLabels=6CCF5F&currStreakNum=8AF76E&sideNums=6CCF5F&dates=4E6E4A" />
+  <strong>Java Backend Developer</strong> &middot; Spring Boot &middot; Databases &middot; AI Workflows
 </p>
 
-<p align="center">
-  <img alt="Top Languages" src="https://github-readme-stats.vercel.app/api/top-langs?username=Sailen-Mondal&layout=compact&bg_color=050505&title_color=8AF76E&text_color=6CCF5F&border_color=4E6E4A" />
-</p>
+## Current Focus
 
-## Featured Projects
+- Building reliable Java and Spring Boot services with clear, maintainable APIs.
+- Exploring AI-assisted workflows, retrieval-augmented generation, and agent systems.
+- Open to backend developer and software engineering opportunities.
 
-```bash
-$ ls ~/projects
-```
+## Selected Work
 
-| Project | Description |
-| --- | --- |
-| [Career Copilot](https://github.com/Sailen-Mondal/Career-Copilot) | AI-powered career assistant with RAG and agent workflows |
-| [WhatsApp AI Assistant](https://github.com/Sailen-Mondal/WhatsApp-AI-Assistant) | WhatsApp-integrated AI bot for automated conversations |
+### [Career Copilot](https://github.com/Sailen-Mondal/Career-Copilot)
 
-## Tech Stack
+An AI-powered career assistant built around RAG and agent workflows to make job preparation more practical and personal.
 
-```bash
-$ cat ~/.stack
-```
+### [WhatsApp AI Assistant](https://github.com/Sailen-Mondal/WhatsApp-AI-Assistant)
 
-![Java](https://img.shields.io/badge/Java-terminal-1A5C12?style=flat-square) ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-terminal-1A5C12?style=flat-square) ![Hibernate](https://img.shields.io/badge/Hibernate-terminal-1A5C12?style=flat-square) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-terminal-1A5C12?style=flat-square) ![MongoDB](https://img.shields.io/badge/MongoDB-terminal-1A5C12?style=flat-square) ![Redis](https://img.shields.io/badge/Redis-terminal-1A5C12?style=flat-square) ![React](https://img.shields.io/badge/React-terminal-1A5C12?style=flat-square) ![Docker](https://img.shields.io/badge/Docker-terminal-1A5C12?style=flat-square) ![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-terminal-1A5C12?style=flat-square) ![Linux](https://img.shields.io/badge/Linux-terminal-1A5C12?style=flat-square) ![LangChain](https://img.shields.io/badge/LangChain-terminal-1A5C12?style=flat-square) ![OpenRouter](https://img.shields.io/badge/OpenRouter-terminal-1A5C12?style=flat-square) ![Gemini](https://img.shields.io/badge/Gemini-terminal-1A5C12?style=flat-square)
+A WhatsApp-integrated assistant for automated conversations and useful, context-aware support.
 
-## Contact
+## Stack
 
-```bash
-$ cat ~/.contact
-```
+<p align="center"><a href="https://www.java.com/"><img alt="Java" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="38" height="38" /></a>&nbsp;&nbsp;<a href="https://spring.io/projects/spring-boot"><img alt="Spring Boot" src="https://cdn.simpleicons.org/springboot/6DB33F" width="38" height="38" /></a>&nbsp;&nbsp;<a href="https://hibernate.org/"><img alt="Hibernate" src="https://cdn.simpleicons.org/hibernate/59666C" width="38" height="38" /></a>&nbsp;&nbsp;<a href="https://www.postgresql.org/"><img alt="PostgreSQL" src="https://cdn.simpleicons.org/postgresql/4169E1" width="38" height="38" /></a>&nbsp;&nbsp;<a href="https://www.mongodb.com/"><img alt="MongoDB" src="https://cdn.simpleicons.org/mongodb/47A248" width="38" height="38" /></a>&nbsp;&nbsp;<a href="https://redis.io/"><img alt="Redis" src="https://cdn.simpleicons.org/redis/DC382D" width="38" height="38" /></a>&nbsp;&nbsp;<a href="https://react.dev/"><img alt="React" src="https://cdn.simpleicons.org/react/61DAFB" width="38" height="38" /></a></p>
+<p align="center"><sub>Java &middot; Spring Boot &middot; Hibernate &middot; PostgreSQL &middot; MongoDB &middot; Redis &middot; React</sub></p>
+<p align="center"><a href="https://www.docker.com/"><img alt="Docker" src="https://cdn.simpleicons.org/docker/2496ED" width="38" height="38" /></a>&nbsp;&nbsp;<a href="https://github.com/features/actions"><img alt="GitHub Actions" src="https://cdn.simpleicons.org/githubactions/2088FF" width="38" height="38" /></a>&nbsp;&nbsp;<a href="https://www.linux.org/"><img alt="Linux" src="https://cdn.simpleicons.org/linux/FCC624" width="38" height="38" /></a>&nbsp;&nbsp;<a href="https://www.langchain.com/"><img alt="LangChain" src="https://cdn.simpleicons.org/langchain/1C3C3C" width="38" height="38" /></a>&nbsp;&nbsp;<a href="https://openrouter.ai/"><img alt="OpenRouter" src="https://cdn.simpleicons.org/openrouter/6B57FF" width="38" height="38" /></a>&nbsp;&nbsp;<a href="https://gemini.google.com/"><img alt="Gemini" src="https://cdn.simpleicons.org/googlegemini/4285F4" width="38" height="38" /></a></p>
+<p align="center"><sub>Docker &middot; GitHub Actions &middot; Linux &middot; LangChain &middot; OpenRouter &middot; Gemini</sub></p>
 
-| Channel | Link |
-| --- | --- |
-| GitHub | [Sailen-Mondal](https://github.com/Sailen-Mondal) |
-| LinkedIn | [Profile](https://www.linkedin.com/in/sailen-mondal) |
-| Email | [sailenmondal@gmail.com](mailto:sailenmondal@gmail.com) |
+## Connect
 
-## Resume
+[GitHub](https://github.com/Sailen-Mondal) &middot; [LinkedIn](https://www.linkedin.com/in/sailen-mondal) &middot; [Email](mailto:sailenmondal@gmail.com)
 
-[![Resume](https://img.shields.io/badge/resume-view-4E6E4A?style=flat-square)](https://github.com/Sailen-Mondal/Sailen-Mondal)
-
----
-
-```bash
-$ echo "Thanks for visiting" && exit 0
-```
+<p align="center"><sub>Kolkata, India &middot; JIS University</sub></p>

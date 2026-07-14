@@ -1,73 +1,37 @@
-# {{NAME}}
-
-```text
-$ whoami
-{{NAME}}
-$ role
-Java Backend Developer
-$ status
-Building production systems on the terminal.
-```
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg">
-  <img alt="{{NAME}} - terminal profile" src="assets/hero-dark.svg">
-</picture>
-
-## GitHub Stats
-
-```bash
-$ gh api user --jq .login
-{{USERNAME}}
-```
-
 <p align="center">
-  <img alt="GitHub Stats" src="{{STATS_URL}}" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg">
+    <img alt="Terminal dossier for {{NAME}}" src="assets/hero-dark.svg">
+  </picture>
 </p>
 
 <p align="center">
-  <img alt="GitHub Streak" src="{{STREAK_URL}}" />
+  <strong>Java Backend Developer</strong> &middot; Spring Boot &middot; Databases &middot; AI Workflows
 </p>
 
-<p align="center">
-  <img alt="Top Languages" src="{{LANGS_URL}}" />
-</p>
+## Current Focus
 
-## Featured Projects
+- Building reliable Java and Spring Boot services with clear, maintainable APIs.
+- Exploring AI-assisted workflows, retrieval-augmented generation, and agent systems.
+- Open to backend developer and software engineering opportunities.
 
-```bash
-$ ls ~/projects
-```
+## Selected Work
 
-{{PROJECTS_TABLE}}
+### [Career Copilot]({{CAREER_COPILOT_URL}})
 
-## Tech Stack
+An AI-powered career assistant built around RAG and agent workflows to make job preparation more practical and personal.
 
-```bash
-$ cat ~/.stack
-```
+### [WhatsApp AI Assistant]({{WHATSAPP_ASSISTANT_URL}})
 
-{{TECH_STACK_BADGES}}
+A WhatsApp-integrated assistant for automated conversations and useful, context-aware support.
 
-## Contact
+## Stack
 
-```bash
-$ cat ~/.contact
-```
+{{TECH_STACK_LOGOS}}
 
-| Channel | Link |
-| --- | --- |
-| GitHub | [{{USERNAME}}]({{GITHUB}}) |
-| LinkedIn | [Profile]({{LINKEDIN}}) |
-| Email | [sailenmondal@gmail.com]({{EMAIL}}) |
+## Connect
 
-## Resume
+[GitHub]({{GITHUB}}) &middot; [LinkedIn]({{LINKEDIN}}) &middot; [Email]({{EMAIL}})
 
-[![Resume](https://img.shields.io/badge/resume-view-4E6E4A?style=flat-square)]({{RESUME_URL}})
-
----
-
-```bash
-$ echo "Thanks for visiting" && exit 0
-```
+<p align="center"><sub>Kolkata, India &middot; JIS University</sub></p>

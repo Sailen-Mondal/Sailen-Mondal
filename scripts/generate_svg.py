@@ -563,7 +563,7 @@ def build_crt_overlay(parent: ET.Element, width: float, height: float, theme: Th
         opacity="1",
         pointer_events="none",
     )
-    noise_rect = sub(
+    sub(
         parent,
         "rect",
         width=str(width),
@@ -580,6 +580,59 @@ def build_crt_overlay(parent: ET.Element, width: float, height: float, theme: Th
         fill="url(#vignette)",
         pointer_events="none",
     )
+
+
+def build_dossier_hero(parent: ET.Element, cfg: dict, theme: Theme, width: int, height: int) -> None:
+    """Build the single, wide terminal used as the profile's visual signature."""
+    font = cfg["svg"]["font_family"]
+    identity = cfg["identity"]
+    margin = 28
+    panel_width = width - margin * 2
+    panel_height = height - margin * 2
+
+    panel = sub(parent, "g", id="terminalDossier", transform=f"translate({margin},{margin})")
+    sub(panel, "rect", width=str(panel_width), height=str(panel_height), fill=theme.panel, stroke=theme.border, stroke_width="2", rx="8")
+    sub(panel, "rect", width=str(panel_width), height="46", fill=theme.bg, stroke=theme.border, stroke_width="1", rx="8")
+    sub(panel, "rect", y="40", width=str(panel_width), height="6", fill=theme.bg)
+
+    for index, color in enumerate(["#EF6A62", "#E5B84B", theme.secondary]):
+        sub(panel, "circle", cx=str(24 + index * 18), cy="23", r="5", fill=color, opacity="0.9")
+
+    window_title = sub(panel, "text", x="86", y="28", fill=theme.dim, font_family=font, font_size="13")
+    window_title.text = f"{identity['username']}@portfolio:~"
+
+    eyebrow = sub(panel, "text", x="42", y="94", fill=theme.secondary, font_family=font, font_size="14", letter_spacing="1")
+    eyebrow.text = "PERSONAL TERMINAL DOSSIER"
+
+    name = sub(panel, "text", x="42", y="150", fill=theme.text, font_family=font, font_size="42", font_weight="700")
+    name.text = identity["name"].upper()
+
+    role = sub(panel, "text", x="42", y="184", fill=theme.secondary, font_family=font, font_size="20")
+    role.text = identity["role"]
+    sub(panel, "line", x1="42", y1="212", x2=str(panel_width - 42), y2="212", stroke=theme.border, stroke_width="1")
+
+    command_y = 252
+    for index, command in enumerate(cfg["terminal_commands"][:3]):
+        y = command_y + index * 40
+        prompt = sub(panel, "text", x="42", y=str(y), fill=theme.text, font_family=font, font_size="15")
+        prompt.text = f"$ {command['cmd']}"
+        value = sub(panel, "text", x="250", y=str(y), fill=theme.secondary, font_family=font, font_size="15")
+        value.text = command["output"].replace("\n", " | ")
+
+    footer = sub(
+        panel,
+        "text",
+        x=str(panel_width - 42),
+        y="94",
+        fill=theme.dim,
+        font_family=font,
+        font_size="12",
+        letter_spacing="0.6",
+        text_anchor="end",
+    )
+    footer.text = "KOLKATA, INDIA  //  JIS UNIVERSITY"
+    cursor = sub(panel, "rect", x=str(panel_width - 58), y=str(panel_height - 42), width="12", height="18", fill=theme.cursor)
+    sub(cursor, "animate", attributeName="opacity", values="1;0;1", dur="1.1s", repeatCount="indefinite")
 
 
 def build_document(
@@ -605,7 +658,7 @@ def build_document(
     sub(root, "rect", width=str(width), height=str(height), fill=theme.bg)
     build_crt_defs(root, theme, width, height)
 
-    if mode in {"hero", "ascii"}:
+    if mode == "ascii":
         build_portrait_panel(
             root,
             grid,
@@ -619,15 +672,7 @@ def build_document(
         )
 
     if mode == "hero":
-        build_terminal_panel(
-            root,
-            cfg,
-            theme,
-            x_offset=portrait_width + margin,
-            y_offset=margin,
-            panel_width=terminal_width - margin,
-            panel_height=height - margin * 2,
-        )
+        build_dossier_hero(root, cfg, theme, width, height)
 
     build_crt_overlay(root, width, height, theme)
     return ET.ElementTree(root)

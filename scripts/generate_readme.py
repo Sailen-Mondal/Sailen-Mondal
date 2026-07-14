@@ -19,68 +19,39 @@ def load_config(path: Path) -> dict:
         return yaml.safe_load(handle)
 
 
-def stats_url(username: str) -> str:
-    return (
-        "https://github-readme-stats.vercel.app/api"
-        f"?username={username}"
-        "&show_icons=true"
-        "&hide_border=false"
-        "&bg_color=050505"
-        "&title_color=8AF76E"
-        "&text_color=6CCF5F"
-        "&icon_color=8AF76E"
-        "&border_color=4E6E4A"
-    )
-
-
-def streak_url(username: str) -> str:
-    return (
-        "https://github-readme-streak-stats.herokuapp.com"
-        f"?user={username}"
-        "&background=050505"
-        "&border=4E6E4A"
-        "&stroke=4E6E4A"
-        "&ring=6CCF5F"
-        "&fire=8AF76E"
-        "&currStreakLabel=8AF76E"
-        "&sideLabels=6CCF5F"
-        "&currStreakNum=8AF76E"
-        "&sideNums=6CCF5F"
-        "&dates=4E6E4A"
-    )
-
-
-def langs_url(username: str) -> str:
-    return (
-        "https://github-readme-stats.vercel.app/api/top-langs"
-        f"?username={username}"
-        "&layout=compact"
-        "&bg_color=050505"
-        "&title_color=8AF76E"
-        "&text_color=6CCF5F"
-        "&border_color=4E6E4A"
-    )
-
-
-def badge(label: str, message: str, color: str = "4E6E4A") -> str:
-    from urllib.parse import quote
-
-    return f"https://img.shields.io/badge/{quote(label)}-{quote(message)}-{color}?style=flat-square"
-
-
-def render_projects(projects: list[dict]) -> str:
-    lines = ["| Project | Description |", "| --- | --- |"]
-    for project in projects:
-        lines.append(f"| [{project['name']}]({project['url']}) | {project['desc']} |")
-    return "\n".join(lines)
+TECH_LOGOS = {
+    "Java": ("https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg", "", "https://www.java.com/"),
+    "Spring Boot": ("springboot", "6DB33F", "https://spring.io/projects/spring-boot"),
+    "Hibernate": ("hibernate", "59666C", "https://hibernate.org/"),
+    "PostgreSQL": ("postgresql", "4169E1", "https://www.postgresql.org/"),
+    "MongoDB": ("mongodb", "47A248", "https://www.mongodb.com/"),
+    "Redis": ("redis", "DC382D", "https://redis.io/"),
+    "React": ("react", "61DAFB", "https://react.dev/"),
+    "Docker": ("docker", "2496ED", "https://www.docker.com/"),
+    "GitHub Actions": ("githubactions", "2088FF", "https://github.com/features/actions"),
+    "Linux": ("linux", "FCC624", "https://www.linux.org/"),
+    "LangChain": ("langchain", "1C3C3C", "https://www.langchain.com/"),
+    "OpenRouter": ("openrouter", "6B57FF", "https://openrouter.ai/"),
+    "Gemini": ("googlegemini", "4285F4", "https://gemini.google.com/"),
+}
 
 
 def render_tech_stack(stack: list[str]) -> str:
-    badges = []
-    for item in stack:
-        slug = item.replace(" ", "%20")
-        badges.append(f"![{item}]({badge(item, 'terminal', '1A5C12')})")
-    return " ".join(badges)
+    rows = []
+    for start in range(0, len(stack), 7):
+        items = stack[start : start + 7]
+        logos = []
+        labels = []
+        for item in items:
+            slug, color, url = TECH_LOGOS[item]
+            icon_url = slug if slug.startswith("https://") else f"https://cdn.simpleicons.org/{slug}/{color}"
+            logos.append(
+                f'<a href="{url}"><img alt="{item}" src="{icon_url}" width="38" height="38" /></a>'
+            )
+            labels.append(item)
+        rows.append('<p align="center">' + "&nbsp;&nbsp;".join(logos) + "</p>")
+        rows.append('<p align="center"><sub>' + " &middot; ".join(labels) + "</sub></p>")
+    return "\n".join(rows)
 
 
 def render_template(cfg: dict, template_path: Path) -> str:
@@ -92,11 +63,9 @@ def render_template(cfg: dict, template_path: Path) -> str:
         "{{NAME}}": identity["name"],
         "{{TAGLINE}}": identity.get("tagline", identity["role"]),
         "{{USERNAME}}": username,
-        "{{STATS_URL}}": stats_url(username),
-        "{{STREAK_URL}}": streak_url(username),
-        "{{LANGS_URL}}": langs_url(username),
-        "{{PROJECTS_TABLE}}": render_projects(gh["featured_projects"]),
-        "{{TECH_STACK_BADGES}}": render_tech_stack(gh["tech_stack"]),
+        "{{CAREER_COPILOT_URL}}": gh["featured_projects"][0]["url"],
+        "{{WHATSAPP_ASSISTANT_URL}}": gh["featured_projects"][1]["url"],
+        "{{TECH_STACK_LOGOS}}": render_tech_stack(gh["tech_stack"]),
         "{{LINKEDIN}}": gh["social"]["linkedin"],
         "{{EMAIL}}": gh["social"]["email"],
         "{{GITHUB}}": gh["social"]["github"],
