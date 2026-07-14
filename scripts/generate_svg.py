@@ -771,11 +771,15 @@ def run(
     height = int(cfg["svg"]["hero_height"])
 
     if mode in {"hero", "all"}:
-        for theme_name, filename in [("dark", "hero-dark.svg"), ("light", "hero-light.svg")]:
+        for theme_name, filenames in [
+            ("dark", ("hero-dark.svg", "terminal-portrait-dark.svg")),
+            ("light", ("hero-light.svg", "terminal-portrait-light.svg")),
+        ]:
             theme = theme_from_config(cfg, theme_name)
             tree = build_document(grid, cfg, theme, width, height, mode="hero")
-            write_tree(tree, output_dir / filename)
-            print(f"Wrote {output_dir / filename}")
+            for filename in filenames:
+                write_tree(tree, output_dir / filename)
+                print(f"Wrote {output_dir / filename}")
 
     if mode in {"ascii", "all"}:
         ascii_width = int(width * cfg["svg"]["portrait_ratio"]) + 24

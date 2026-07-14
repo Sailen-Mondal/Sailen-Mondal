@@ -26,6 +26,8 @@ PROFILE_SOURCES = [
 EXPECTED_ASSETS = [
     "hero-dark.svg",
     "hero-light.svg",
+    "terminal-portrait-dark.svg",
+    "terminal-portrait-light.svg",
     "ascii-dark.svg",
     "ascii-light.svg",
     "icons.svg",
