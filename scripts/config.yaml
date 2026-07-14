@@ -1,0 +1,111 @@
+identity:
+  name: "Sailen Mondal"
+  username: "Sailen-Mondal"
+  hostname: "sailen"
+  role: "Java Backend Developer"
+  education: "B.Tech CSE\nJIS University"
+  tagline: "Java Backend Developer | Spring Boot | AI Agents"
+
+terminal_commands:
+  - cmd: whoami
+    output: "Sailen Mondal"
+  - cmd: role
+    output: "Java Backend Developer"
+  - cmd: education
+    output: "B.Tech CSE\nJIS University"
+  - cmd: current_focus
+    output: "Java\nSpring Boot\nSystem Design\nAI Agents"
+  - cmd: currently_building
+    output: "Career Copilot"
+  - cmd: latest_project
+    output: "WhatsApp AI Assistant"
+  - cmd: open_to
+    output: "Backend Developer\nSoftware Engineer"
+  - cmd: tech_stack
+    output: "Java\nSpring Boot\nHibernate\nJPA\nPostgreSQL\nMongoDB\nRedis\nReact\nDocker\nGitHub Actions\nLinux\nLangChain\nOpenRouter\nGemini"
+
+animation_words:
+  binary: "0101010010"
+  code:
+    - "class"
+    - "public"
+    - "HashMap"
+    - "@RestController"
+    - "SpringBoot"
+    - "Docker"
+  ai:
+    - "LLM"
+    - "MCP"
+    - "VectorDB"
+    - "Agent"
+    - "RAG"
+    - "CareerCopilot"
+
+colors:
+  dark:
+    bg: "#050505"
+    text: "#8AF76E"
+    secondary: "#6CCF5F"
+    dim: "#4E6E4A"
+    cursor: "#B8FF9F"
+    border: "#3A5A36"
+    panel: "#0A0A0A"
+  light:
+    bg: "#E8E4D9"
+    text: "#1A5C12"
+    secondary: "#2D7A22"
+    dim: "#6B8F66"
+    cursor: "#0D4D08"
+    border: "#8BA888"
+    panel: "#DEDAD0"
+
+ascii:
+  width: 60
+  charset: " .'`^\",:;Il!i><~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$"
+  contrast: 1.4
+  gamma: 0.85
+  char_width: 4.8
+  char_height: 8.0
+
+svg:
+  hero_width: 1200
+  hero_height: 400
+  portrait_ratio: 0.4
+  font_family: "JetBrains Mono, Consolas, monospace"
+  font_size: 8
+  loop_duration: 52
+
+github:
+  username: "Sailen-Mondal"
+  stats_theme: "chartreuse-dark"
+  top_langs:
+    - "Java"
+    - "Python"
+    - "JavaScript"
+    - "TypeScript"
+  tech_stack:
+    - "Java"
+    - "Spring Boot"
+    - "Hibernate"
+    - "PostgreSQL"
+    - "MongoDB"
+    - "Redis"
+    - "React"
+    - "Docker"
+    - "GitHub Actions"
+    - "Linux"
+    - "LangChain"
+    - "OpenRouter"
+    - "Gemini"
+  featured_projects:
+    - name: "Career Copilot"
+      url: "https://github.com/Sailen-Mondal/Career-Copilot"
+      desc: "AI-powered career assistant with RAG and agent workflows"
+    - name: "WhatsApp AI Assistant"
+      url: "https://github.com/Sailen-Mondal/WhatsApp-AI-Assistant"
+      desc: "WhatsApp-integrated AI bot for automated conversations"
+  social:
+    linkedin: "https://www.linkedin.com/in/sailen-mondal"
+    email: "mailto:sailenmondal@gmail.com"
+    github: "https://github.com/Sailen-Mondal"
+  resume_url: "https://github.com/Sailen-Mondal/Sailen-Mondal"
