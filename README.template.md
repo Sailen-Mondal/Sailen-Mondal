@@ -1,8 +1,8 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg">
-    <img alt="Terminal dossier for {{NAME}}" src="assets/hero-dark.svg">
+    <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg?rev=964cd4c">
+    <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg?rev=964cd4c">
+    <img alt="Terminal portrait for {{NAME}}" src="assets/hero-dark.svg?rev=964cd4c">
   </picture>
 </p>
 
